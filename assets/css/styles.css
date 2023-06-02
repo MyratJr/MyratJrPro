@@ -18,9 +18,9 @@
   --lig: 72%;
   --second-hue: red;
   --first-color: yellow;
-  --first-color-alt: red;
+  --first-color-alt: grey;
   --title-color: yellow;
-  --text-color: red;
+  --text-color: grey;
   --text-color-light: yellow;
   --body-color:black;
   --container-color: rgb(8, 8, 8);
@@ -261,11 +261,12 @@ body.light-theme{
   color: var(--first-color-alt);
 }
 .nav__menu{
-  border:solid 1px yellow;
-  bottom: 31.3rem;
+  border: solid 1px yellow;
+  position: fixed;
+  bottom: 1rem;
   background-color: hsla(var(--second-hue), 32%, 16%, .8);
   width: 90%;
-  border-radius: 1rem;
+  border-radius: 4rem;
   padding: 1rem 2.25rem;
   backdrop-filter: blur(10px);
   transition: .4s; /* for light mode animation */
@@ -285,14 +286,14 @@ body.light-theme{
 }
 /* Active link */
 .active-link{
-  background: linear-gradient(180deg,black,red);
+  background: linear-gradient(180deg,black,grey);
   box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4);
   color: var(--title-color);
 }
 
 /* Change background header */
 .scroll-header{
-  box-shadow: 0 4px 4px hsla(0, 0%, 4%, .3);
+  box-shadow: 0 1px 1px yellow;
 }
 
 /*=============== HOME ===============*/
@@ -311,7 +312,6 @@ body.light-theme{
 }
 .home__greeting{
   font-size: 3vh;
-  margin-top: 8vh;
   display: block;
   color: var(--title-color);
   margin-bottom: .25rem;
@@ -421,41 +421,8 @@ body.light-theme{
 }
 .home__scroll{
   color: var(--first-color);
-  right: -10rem;
-  bottom: 32rem;
-  display: grid;
-  row-gap: 2.25rem;
-  justify-items: center;
-}
-
-.home__scroll1{
-  color: var(--first-color);
-  margin-left: 1200px;
-  margin-bottom: 60vh;
-  margin-top: -65vh;
-  /* bottom: -10rem; */
-  display: grid;
-  row-gap: 2.25rem;
-  justify-items: center;
-}
-
-.home__scroll2{
-  color: var(--first-color);
-  margin-left: 1200px;
-  margin-bottom: 20vh;
-  margin-top: -37vh;
-  /* bottom: -10rem; */
-  display: grid;
-  row-gap: 2.25rem;
-  justify-items: center;
-}
-
-.home__scroll3{
-  color: var(--first-color);
-  margin-left: 1200px;
-  margin-bottom: 70vh;
-  margin-top: -80vh;
-  /* bottom: -10rem; */
+  right: 6rem;
+  bottom: 7rem;
   display: grid;
   row-gap: 2.25rem;
   justify-items: center;
@@ -1031,27 +998,14 @@ body.light-theme{
     column-gap: .25rem;
   }
 }
-@media screen and (max-width:860px) {
-  .nav__menu{
-    width: 328px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    margin-top: 17vh;
-    margin-left: -3.7cm;
-
-  }
-}
 
 /* For medium devices */
-@media screen and (min-width:860px) {
+@media screen and (min-width:576px) {
   .nav__menu{
     width: 328px;
     left: 0;
     right: 0;
     margin: 0 auto;
-    margin-top: 30vh;
-    margin-left: 11.4vw;
   }
 
   .typed-cursor{
