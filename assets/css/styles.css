@@ -421,7 +421,7 @@ body.light-theme{
 }
 .home__scroll{
   color: var(--first-color);
-  right: 6rem;
+  right: 6vw;
   bottom: 7rem;
   display: grid;
   row-gap: 2.25rem;
