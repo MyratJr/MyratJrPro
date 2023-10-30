@@ -1124,7 +1124,7 @@ body.light-theme {
 
 @media screen and (min-width: 767px) {
     .work__container {
-        grid-template-columns: repeat(4, max-content);
+        grid-template-columns: repeat(3, max-content);
     }
     .work__card {
         width: 300px;
