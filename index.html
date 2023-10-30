@@ -389,17 +389,59 @@
             <section class="work section" id="work">
                 <span class="section__subtitle">My Portfolio</span>
                 <h2 class="section__title">Recent Works</h2>
-                
+                <style>
+                    .modal {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    margin-top:15vh;
+                    left: 0;
+                    width: 100%;
+                    height: 200%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    backdrop-filter: blur(5px);
+                    z-index: 100;
+                    }
+
+                    .modal-content {
+                    position: relative;
+                    margin: 0 auto;
+                    width: 75%;
+                    height: 40%;
+                    background-color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    }
+
+                    .modal-image {
+                    max-width: 100%;
+                    max-height: 100%;
+                    display: block;
+                    margin: 0 auto;
+                    }
+
+                    .modal-caption {
+                    text-align: center;
+                    margin-top: 10px;
+                    }
+
+                    .modal.show {
+                    display: block;
+                    }
+                </style>
                 <div class="work__filters">
                     <span class="work__item active-work" data-filter="all">All</span>
                     <span class="work__item" data-filter=".web">FASTAPI</span>
                     <span class="work__item" data-filter=".django">Django</span>
                     <span class="work__item" data-filter=".design">Python</span>
-                </div>
-
+                </div><div id="modal" class="modal">
+  <div class="modal-content">
+    <img id="image1" src="" alt="" class="modal-image">
+  </div>
+</div>
                 <div class="work__container container grid">
                     <div class="work__card mix django">
-                        <img src="assets/img/Untitled6.png" alt="" class="work__img">
+                        <img id="image" src="assets/img/IMG_20231030_101226.jpg" alt="" class="work__img">
                         <h3 class="work__title">"Digital report" local web site</h3>
                         <p class="work__description">
                             'Digital report' works in my university since 01.04.2023. It's local web site gets arrive date and left date of workers by barcode scanner. It scans id cards.
@@ -409,7 +451,46 @@
                             See image <i class="bx bx-right-arrow-alt work__icon"></i>
                         </a>
                     </div>
+                    <script>
+                    document.querySelectorAll(".work__img").forEach((image) => {
+  image.addEventListener("click", () => {
+    document.getElementById("modal").classList.add("show");
+    document.getElementById("enlarged-image").src = image.src;
+  });
+});
 
+// Close the modal dialog when the user clicks outside of the modal dialog.
+window.addEventListener("click", (event) => {
+  if (event.target === document.getElementById("modal")) {
+    document.getElementById("modal").classList.remove("show");
+  }
+});
+    const imageUrls = [
+      "assets/img/IMG_20231030_094434.jpg",
+      "assets/img/IMG_20231030_094513.jpg",
+      "assets/img/IMG_20231030_094533.jpg",
+      "assets/img/IMG_20231030_094603.jpg",
+      "assets/img/IMG_20231030_094629.jpg",
+    ];
+
+    let currentImageIndex = 0;
+
+    function changeImage() {
+      const imageUrl = imageUrls[currentImageIndex];
+      const image = document.getElementById("image");
+      const image1 = document.getElementById("image1");
+      image.src = imageUrl;
+      image1.src = imageUrl;
+
+      currentImageIndex++;
+
+      if (currentImageIndex >= imageUrls.length) {
+        currentImageIndex = 0;
+      }
+    }
+
+    setInterval(changeImage, 3000);
+  </script>
                     <!-- <div class="work__card mix mobil">
                     <img src="assets/img/work2.jpg" alt="" class="work__img">
                     <h3 class="work__title">Add It</h3>
