@@ -1091,7 +1091,7 @@ body.light-theme {
         justify-content: center;
     }
     .about__info_2 {
-        grid-template-columns: repeat(7, 150px);
+        grid-template-columns: repeat(6, 150px);
         justify-content: center;
     }
     .about__description {
